@@ -8,7 +8,6 @@ return {
       vim.cmd.colorscheme "tokyonight-moon"
     end
   },
-
   {
     "catppuccin/nvim",
     lazy = false,
