@@ -18,5 +18,5 @@ require("vim-options")
 -- require("lazy").setup("plugins")
 require("lazy").setup({
   {import = "plugins"},
-  {import = "plugins.treesitter"}
+  {import = "plugins.treesitter"},
 })
