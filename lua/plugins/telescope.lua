@@ -22,6 +22,10 @@ return {
       vim.keymap.set("n", "<leader>rg", builtin.live_grep, {})
       -- Ripgrep the recent file
       vim.keymap.set("n", "<leader>p", builtin.oldfiles, {})
+      vim.keymap.set("n", "<C-p>", builtin.commands, {})
+      vim.keymap.set("n", "<C-h>", builtin.command_history, {})
+
+
 
       require("telescope").load_extension("ui-select")
     end,
