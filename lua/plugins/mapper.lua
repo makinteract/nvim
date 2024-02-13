@@ -110,15 +110,15 @@ return {
       "Files panel"
     )
 
-    -- mapper.map(
-    -- "n",
-    -- "<leader>b",
-    -- ":Neotree buffers reveal float<CR>",
-    -- { silent = true, noremap = true },
-    -- "Neo-tree",
-    -- "buffers_list",
-    -- "Buffers list"
-    -- )
+    mapper.map(
+    "n",
+    "bb",
+    ":Neotree buffers reveal float<CR>",
+    { silent = true, noremap = true },
+    "Neo-tree",
+    "buffers_list",
+    "Buffers list"
+    )
 
     -- LSP
     mapper.map(
@@ -363,5 +363,18 @@ return {
       "toggle_wrap",
       "Toggle Wrap"
     )
+
+
+    mapper.map(
+      "n",
+      "<leader>ut",
+      "<cmd>UndotreeToggle<cr>",
+      { silent = true, noremap = true },
+      "Other",
+      "undotree_toggle",
+      "Undo tree toggle"
+    )
+
+
   end,
 }
