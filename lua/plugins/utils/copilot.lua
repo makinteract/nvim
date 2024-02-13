@@ -18,7 +18,7 @@ return {
             jump_next = "C-Right",
             accept = "<C-CR>",
             refresh = "C-R",
-            open = "<C-Down>"
+            open = "<leader>cp"
           },
           layout = {
             position = "bottom", -- | top | left | right
