@@ -11,7 +11,7 @@ return {
     config = function()
       require('copilot').setup({
         panel = {
-          enabled = true,
+          enabled = false,
           auto_refresh = false,
           keymap = {
             jump_prev = "C-Left",
@@ -27,7 +27,7 @@ return {
         },
         suggestion = {
           enabled = true,
-          auto_trigger = false,
+          auto_trigger = true,
           debounce = 75,
           keymap = {
             accept = "<C-CR>",

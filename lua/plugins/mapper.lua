@@ -107,6 +107,10 @@ return { "gregorias/nvim-mapper",
       {silent = true, noremap = true},
       "Copilot", "PrevSuggestion", "Previous suggestion")
 
+    mapper.map('n', "<leader>ct", copilot.toggle_auto_trigger,
+      {silent = true, noremap = true},
+      "Copilot", "CopilotToggle", "Toggle auto-triger")
+
     -- Others
     mapper.map('n', "<D-s>", ":w<CR>",
       {silent = true, noremap = true},
