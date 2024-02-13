@@ -102,7 +102,7 @@ return { "gregorias/nvim-mapper",
 
     -- Duplicate
     mapper.map({'n', 'i'}, "<S-A-Up>", "<CMD>LineDuplicate -1<CR>",
-    {silent = true, noremap = true},
+      {silent = true, noremap = true},
       "Duplicate", "LineDuplicateUp", "Line Duplicate Up")
 
     mapper.map({'n', 'i'}, "<S-A-Down>", "<CMD>LineDuplicate +1<CR>",
@@ -116,6 +116,15 @@ return { "gregorias/nvim-mapper",
     mapper.map('v', "<S-A-Down>", "<CMD>VisualDuplicate +1<CR>",
       {silent = true, noremap = true},
       "Duplicate", "VisualDuplicateDown", "Visual Duplicate Down")
+
+    -- Move line
+    mapper.map({'n', 'i'}, "<A-Up>", "<CMD>m -2<CR>",
+      {silent = true, noremap = true},
+      "Move", "MoveLineUp", "Move Line Up")
+
+    mapper.map({'n', 'i'}, "<A-Down>", "<CMD>m +1<CR>",
+      {silent = true, noremap = true},
+      "Move", "MoveLineDown", "Move Line Down")
 
     -- Copilot
     local copilot = require("copilot.suggestion");
