@@ -3,6 +3,7 @@ return {
   tag = "*",
   config = function()
     require("toggleterm").setup({
+      autochdir = true,
       size = 20,
       open_mapping = [[<C-\>]],
       hide_numbers = true,
@@ -24,8 +25,6 @@ return {
         },
       },
     })
-
-    vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
 
     local Terminal = require("toggleterm.terminal").Terminal
     local lazygit = Terminal:new({ cmd = "lazygit", hidden = true })
