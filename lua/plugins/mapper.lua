@@ -24,7 +24,11 @@ return { "gregorias/nvim-mapper",
     -- Telescope
     local builtin = require("telescope.builtin")
 
-    mapper.map('n', "<C-p>", ":Telescope mapper<CR>",
+    -- mapper.map('n', "<C-p>", ":Telescope mapper<CR>",
+      -- {silent = true, noremap = true},
+      -- "Telescope", "open_maper", "Open Mapper")
+
+    mapper.map({'n', 'i'}, "<C-p>", function() vim.cmd(":Telescope mapper") end,
       {silent = true, noremap = true},
       "Telescope", "open_maper", "Open Mapper")
 
@@ -35,6 +39,10 @@ return { "gregorias/nvim-mapper",
     mapper.map('n', "<leader>p", builtin.commands,
       {silent = true, noremap = true},
       "Telescope", "list_cmd", "List commands")
+
+    mapper.map('n', "<leader>r", builtin.oldfiles,
+      {silent = true, noremap = true},
+      "Telescope", "recent_files", "Recent files")
 
     mapper.map('n', "<C-k>", builtin.keymaps,
       {silent = true, noremap = true},
@@ -107,7 +115,7 @@ return { "gregorias/nvim-mapper",
       {silent = true, noremap = true},
       "Copilot", "PrevSuggestion", "Previous suggestion")
 
-    mapper.map('n', "<leader>ct", copilot.toggle_auto_trigger,
+    mapper.map('n', "<leader>tc", copilot.toggle_auto_trigger,
       {silent = true, noremap = true},
       "Copilot", "CopilotToggle", "Toggle auto-triger")
 
@@ -115,6 +123,15 @@ return { "gregorias/nvim-mapper",
     mapper.map('n', "<D-s>", ":w<CR>",
       {silent = true, noremap = true},
       "Other", "save", "Write/save file")
+
+    mapper.map('n', "<F5>", ":ToggleSpell<CR>",
+      {silent = true, noremap = true},
+      "Other", "toggle_spell", "Toggle spell")
+
+    mapper.map('n', "<F6>", ":so %<CR>",
+      {silent = true, noremap = true},
+      "Other", "source_rile", "Resource file")
+      
 
   end
 }
