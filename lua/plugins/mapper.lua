@@ -13,17 +13,12 @@ return {
 
     -- Mapper panel
 
-    -- mapper.map('n', "<C-p>", ":Telescope mapper<CR>",
-    -- {silent = true, noremap = true},
-    -- "Telescope", "open_maper", "Open Mapper")
-
     mapper.map({ "n", "i" }, "<D-p>", function()
       vim.cmd(":Telescope mapper")
     end, { silent = true, noremap = true }, "Telescope", "open_maper", "Open Mapper")
 
     -- Windows
     mapper.map("n", "hs", ":split<CR>", { silent = true, noremap = true }, "Window", "split", "Split Horizontal")
-
     mapper.map("n", "vs", ":vsplit<CR>", { silent = true, noremap = true }, "Window", "vsplit", "Split Vertical")
 
     -- Telescope
@@ -61,7 +56,7 @@ return {
 
     mapper.map(
       "n",
-      "<C-k>",
+      "<leader>k",
       builtin.keymaps,
       { silent = true, noremap = true },
       "Telescope",
@@ -71,7 +66,7 @@ return {
 
     mapper.map(
       "n",
-      "<leader>g",
+      "<leader>rg",
       builtin.live_grep,
       { silent = true, noremap = true },
       "Telescope",
@@ -81,7 +76,7 @@ return {
 
     mapper.map(
       "n",
-      "<C-h>",
+      "<laeder>h",
       builtin.command_history,
       { silent = true, noremap = true },
       "Telescope",
@@ -111,13 +106,13 @@ return {
     )
 
     mapper.map(
-    "n",
-    "bb",
-    ":Neotree buffers reveal float<CR>",
-    { silent = true, noremap = true },
-    "Neo-tree",
-    "buffers_list",
-    "Buffers list"
+      "n",
+      "<leader>bi",
+      ":Neotree buffers reveal float<CR>",
+      { silent = true, noremap = true },
+      "Neo-tree",
+      "buffers_list",
+      "Buffers list"
     )
 
     -- LSP
@@ -165,7 +160,6 @@ return {
 
     -- Hop
     mapper.map("n", "s", ":HopChar2<cr>", { silent = true, noremap = true }, "Hop", "HopChar2", "Buffers list")
-
     mapper.map("n", "S", ":HopWord<cr>", { silent = true, noremap = true }, "Hop", "HopWord", "Buffers list")
 
     -- Comments
@@ -240,7 +234,7 @@ return {
 
     mapper.map(
       "n",
-      "<leader>sc",
+      "<leader>cs",
       ":Copilot<cr>",
       { silent = true, noremap = true },
       "Copilot",
@@ -290,7 +284,7 @@ return {
 
     mapper.map(
       "n",
-      "<leader>tc",
+      "<leader>ct",
       copilot.toggle_auto_trigger,
       { silent = true, noremap = true },
       "Copilot",
@@ -299,38 +293,58 @@ return {
     )
 
     -- Buffers
+
+    mapper.map(
+      "n",
+      "<leader>bb",
+      "<CMD>:bprevious<CR>",
+      { silent = true, noremap = true },
+      "Buffer",
+      "previous_buffer",
+      "Previous buffer"
+    )
+
     mapper.map(
       "n",
       "<leader>bn",
       "<CMD>enew<CR>",
       { silent = true, noremap = true },
       "Buffer",
-      "BufferNew",
+      "new_buffer",
       "New Buffer"
     )
 
     mapper.map(
       "n",
-      "<leader>bn",
+      "<leader>bk",
       "<CMD>bd<CR>",
       { silent = true, noremap = true },
       "Buffer",
-      "KillBuf",
+      "kill_buffer",
       "Kill Buffer"
     )
 
     mapper.map(
       "n",
-      "<leader>bn",
+      "<leader>bK",
       "<CMD>bd!<CR>",
       { silent = true, noremap = true },
       "Buffer",
-      "KillBufNoSave",
+      "kill_buffer_no_save",
       "Kill Buffer-no save"
     )
 
+    mapper.map(
+      "n",
+      "<D-s>",
+      ":w<CR>",
+      { silent = true, noremap = true },
+      "Buffer",
+      "save_buffer",
+      "Write/save file"
+    )
+
     -- Others
-    mapper.map("n", "<D-s>", ":w<CR>", { silent = true, noremap = true }, "Other", "save", "Write/save file")
 
     mapper.map(
       "n",
@@ -342,7 +356,7 @@ return {
       "Toggle spell"
     )
 
-    mapper.map("n", "<F6>", ":so %<CR>", { silent = true, noremap = true }, "Other", "source_rile", "Resource file")
+    mapper.map("n", "<F6>", ":so %<CR>", { silent = true, noremap = true }, "Other", "source_file", "Resource file")
 
     mapper.map(
       "n",
@@ -356,14 +370,13 @@ return {
 
     mapper.map(
       "n",
-      "<leader>tw",
+      "<leader>wt",
       "<cmd>ToggleWrap<cr>",
       { silent = true, noremap = true },
       "Other",
       "toggle_wrap",
       "Toggle Wrap"
     )
-
 
     mapper.map(
       "n",
@@ -374,7 +387,5 @@ return {
       "undotree_toggle",
       "Undo tree toggle"
     )
-
-
   end,
 }
