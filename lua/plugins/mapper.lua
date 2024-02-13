@@ -11,6 +11,16 @@ return { "gregorias/nvim-mapper",
 
     -- Keymaps
 
+    -- Mapper panel
+
+    -- mapper.map('n', "<C-p>", ":Telescope mapper<CR>",
+    -- {silent = true, noremap = true},
+    -- "Telescope", "open_maper", "Open Mapper")
+
+    mapper.map({'n', 'i'}, "<D-p>", function() vim.cmd(":Telescope mapper") end,
+      {silent = true, noremap = true},
+      "Telescope", "open_maper", "Open Mapper")
+
     -- Windows
     mapper.map('n', 'hs', ":split<CR>",
       {silent = true, noremap = true},
@@ -23,14 +33,6 @@ return { "gregorias/nvim-mapper",
 
     -- Telescope
     local builtin = require("telescope.builtin")
-
-    -- mapper.map('n', "<C-p>", ":Telescope mapper<CR>",
-      -- {silent = true, noremap = true},
-      -- "Telescope", "open_maper", "Open Mapper")
-
-    mapper.map({'n', 'i'}, "<C-p>", function() vim.cmd(":Telescope mapper") end,
-      {silent = true, noremap = true},
-      "Telescope", "open_maper", "Open Mapper")
 
     mapper.map('n', "<leader>.", builtin.find_files,
       {silent = true, noremap = true},
@@ -119,6 +121,19 @@ return { "gregorias/nvim-mapper",
       {silent = true, noremap = true},
       "Copilot", "CopilotToggle", "Toggle auto-triger")
 
+    -- Buffers
+    mapper.map('n', "<leader>bn", "<CMD>enew<CR>",
+      {silent = true, noremap = true},
+      "Buffer", "BufferNew", "New Buffer")
+
+    mapper.map('n', "<leader>bn", "<CMD>bd<CR>",
+      {silent = true, noremap = true},
+      "Buffer", "KillBuf", "Kill Buffer")
+
+    mapper.map('n', "<leader>bn", "<CMD>bd!<CR>",
+      {silent = true, noremap = true},
+      "Buffer", "KillBufNoSave", "Kill Buffer-no save")
+
     -- Others
     mapper.map('n', "<D-s>", ":w<CR>",
       {silent = true, noremap = true},
@@ -131,8 +146,11 @@ return { "gregorias/nvim-mapper",
     mapper.map('n', "<F6>", ":so %<CR>",
       {silent = true, noremap = true},
       "Other", "source_rile", "Resource file")
-      
 
+    mapper.map('n', "<leader>tw", "<cmd>ToggleWrap<cr>",
+      {silent = true, noremap = true},
+      "Other", "toggle_wrap", "Toggle Wrap")
+      
   end
 }
 

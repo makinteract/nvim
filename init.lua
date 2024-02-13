@@ -15,6 +15,7 @@ vim.opt.rtp:prepend(lazypath)
 -- other files
 require("vim-options")
 require("spelling")
+require("textwrap")
 
 -- require("lazy").setup("plugins")
 require("lazy").setup({
