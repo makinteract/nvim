@@ -333,6 +333,8 @@ return {
 		)
 
 		mapper.map("n", "<F6>", ":so %<CR>", { silent = true, noremap = true }, "Other", "source_rile", "Resource file")
+		
+    mapper.map("n", "<leader>/", ":noh<CR>", { silent = true, noremap = true }, "Other", "clear_highlight", "Clear highlight")
 
 		mapper.map(
 			"n",
