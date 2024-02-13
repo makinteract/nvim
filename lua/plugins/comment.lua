@@ -17,6 +17,6 @@ return {
         ---Block-comment toggle keymap
         block = 'gbc',
       },
-    }) 
+    })
   end
 }

@@ -1,5 +1,6 @@
 -- Self enabled when in insert mode
 -- Ctrl+Right or Left will trigger a suggestion
+-- Ctrl+Down opens the panel
 -- Ctrl+Enter will select it
 
 return {
@@ -9,6 +10,21 @@ return {
     event = "InsertEnter",
     config = function()
       require('copilot').setup({
+        panel = {
+          enabled = true,
+          auto_refresh = false,
+          keymap = {
+            jump_prev = "C-Left",
+            jump_next = "C-Right",
+            accept = "<C-CR>",
+            refresh = "C-R",
+            open = "<C-Down>"
+          },
+          layout = {
+            position = "bottom", -- | top | left | right
+            ratio = 0.4
+          },
+        },
         suggestion = {
           enabled = true,
           auto_trigger = false,
