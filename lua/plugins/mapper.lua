@@ -78,7 +78,7 @@ return { "gregorias/nvim-mapper",
 
     mapper.map('n', "<leader>gr", vim.lsp.buf.references,
       {silent = true, noremap = true},
-      "LSP", "goto_definition", "Goto references")
+      "LSP", "goto_reference", "Goto references")
 
     mapper.map('n', "<leader>ca", vim.lsp.buf.code_action,
       {silent = true, noremap = true},
@@ -93,10 +93,33 @@ return { "gregorias/nvim-mapper",
       {silent = true, noremap = true},
       "Hop", "HopWord", "Buffers list")
 
+    -- Comments
+    mapper.map({'n', 'i'}, "<D-/>", function()
+      require('Comment.api').toggle.linewise.current()
+    end,
+      {silent = true, noremap = true},
+      "Comments", "ToggleComments", "Toggle Comments")
+
+    -- Duplicate
+    mapper.map({'n', 'i'}, "<S-A-Up>", "<CMD>LineDuplicate -1<CR>",
+    {silent = true, noremap = true},
+      "Duplicate", "LineDuplicateUp", "Line Duplicate Up")
+
+    mapper.map({'n', 'i'}, "<S-A-Down>", "<CMD>LineDuplicate +1<CR>",
+      {silent = true, noremap = true},
+      "Duplicate", "LineDuplicateDown", "Line Duplicate Down")
+
+    mapper.map('v', "<S-A-Up>", "<CMD>VisualDuplicate -1<CR>",
+      {silent = true, noremap = true},
+      "Duplicate", "VisualDuplicateUp", "Visual Duplicate Up")
+
+    mapper.map('v', "<S-A-Down>", "<CMD>VisualDuplicate +1<CR>",
+      {silent = true, noremap = true},
+      "Duplicate", "VisualDuplicateDown", "Visual Duplicate Down")
 
     -- Copilot
     local copilot = require("copilot.suggestion");
-
+    
     mapper.map('n', "<leader>sc", ":Copilot<cr>",
       {silent = true, noremap = true},
       "Copilot", "StartCopilot", "Start Copilot")
