@@ -348,7 +348,7 @@ return {
 
     mapper.map(
       "n",
-      "<F5>",
+      "<F6>",
       ":ToggleSpell<CR>",
       { silent = true, noremap = true },
       "Other",
@@ -356,7 +356,7 @@ return {
       "Toggle spell"
     )
 
-    mapper.map("n", "<F6>", ":so %<CR>", { silent = true, noremap = true }, "Other", "source_file", "Resource file")
+    mapper.map("n", "<F2>", ":so %<CR>", { silent = true, noremap = true }, "Other", "source_file", "Resource file")
 
     mapper.map(
       "n",
